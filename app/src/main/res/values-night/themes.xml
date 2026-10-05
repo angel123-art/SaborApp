@@ -1,4 +1,25 @@
-﻿<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Base.Theme.SaborApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Colores principales de SaborApp -->
+        <item name="colorPrimary">@color/sabor_naranja</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/sabor_rojo</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="colorTertiary">@color/sabor_rojo_oscuro</item>
+        <item name="colorOnTertiary">@color/white</item>
+
+        <!-- Colores para modo oscuro -->
+        <item name="colorSurface">@color/black</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <item name="android:statusBarColor">@color/sabor_rojo_oscuro</item>
+        <item name="android:navigationBarColor">@color/black</item>
+
     </style>
+
 </resources>

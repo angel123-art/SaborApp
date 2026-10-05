@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_claro"
+    android:padding="20dp"
+    tools:context=".MenuActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_titulo"
+        android:textColor="@color/sabor_rojo"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/tvSubtituloMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/menu_subtitulo"
+        android:textColor="@color/texto_secundario"
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloMenu" />
+
+    <!-- Botón Platos -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPlatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/menu_platos"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:icon="@drawable/ic_restaurant"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtituloMenu" />
+
+    <!-- Botón Mesas -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMesas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/menu_mesas"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:icon="@drawable/ic_table_restaurant"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPlatos" />
+
+    <!-- Botón Pedidos -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPedidos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/menu_pedidos"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:icon="@drawable/ic_pedidos"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMesas" />
+
+    <!-- Botón Cerrar Cuenta -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCerrarCuenta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Cerrar cuenta"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:icon="@drawable/ic_pedidos"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPedidos" />
+
+    <!-- Botón Reportes -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReportes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/menu_reportes"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:icon="@drawable/ic_reportes"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/sabor_rojo"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCerrarCuenta" />
+
+    <!-- Botón Salir -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSalir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/menu_salir"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:icon="@drawable/ic_salir"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        app:iconTint="@android:color/white"
+        app:backgroundTint="@color/sabor_rojo_oscuro"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnReportes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

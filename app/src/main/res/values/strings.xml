@@ -1,3 +1,26 @@
-﻿<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
     <string name="app_name">SaborApp</string>
+
+    <!-- Login -->
+    <string name="login_titulo">SaborApp</string>
+    <string name="login_subtitulo">Pollería El Buen Sabor</string>
+    <string name="login_usuario">Usuario</string>
+    <string name="login_contrasena">Contraseña</string>
+    <string name="login_ingresar">Ingresar</string>
+
+    <string name="error_usuario_vacio">Ingrese su usuario</string>
+    <string name="error_contrasena_vacia">Ingrese su contraseña</string>
+    <string name="error_credenciales">Credenciales incorrectas</string>
+
+    <!-- Menú principal -->
+    <string name="menu_titulo">SaborApp</string>
+    <string name="menu_subtitulo">Menú principal</string>
+    <string name="menu_platos">Platos</string>
+    <string name="menu_mesas">Mesas</string>
+    <string name="menu_pedidos">Pedidos</string>
+    <string name="menu_reportes">Reportes</string>
+    <string name="menu_salir">Salir</string>
+
 </resources>

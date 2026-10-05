@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_claro"
+    android:padding="16dp"
+    tools:context=".MesasActivity">
+
+    <!-- ================================================= -->
+    <!-- TÍTULO -->
+    <!-- ================================================= -->
+
+    <TextView
+        android:id="@+id/tvTituloMesas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mesas"
+        android:textColor="@color/sabor_rojo"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ================================================= -->
+    <!-- SUBTÍTULO -->
+    <!-- ================================================= -->
+
+    <TextView
+        android:id="@+id/tvSubtituloMesas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Administración de mesas"
+        android:textColor="@color/texto_secundario"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloMesas" />
+
+    <!-- ================================================= -->
+    <!-- LISTA DE MESAS -->
+    <!-- ================================================= -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMesas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:clipToPadding="false"
+        android:padding="2dp"
+        tools:listitem="@layout/item_mesa"
+        app:layout_constraintBottom_toTopOf="@id/btnAgregarMesa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtituloMesas" />
+
+    <!-- ================================================= -->
+    <!-- AGREGAR -->
+    <!-- ================================================= -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAgregarMesa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+  Agregar mesa"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnEditarMesa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ================================================= -->
+    <!-- EDITAR -->
+    <!-- ================================================= -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditarMesa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="✎  Editar mesa"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_rojo"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnEliminarMesa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ================================================= -->
+    <!-- ELIMINAR -->
+    <!-- ================================================= -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEliminarMesa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="🗑  Eliminar mesa"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_rojo"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnRegresarMesas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ================================================= -->
+    <!-- REGRESAR -->
+    <!-- ================================================= -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegresarMesas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="←  Regresar"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_rojo"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

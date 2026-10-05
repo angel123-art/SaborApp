@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_claro"
+    android:padding="16dp"
+    tools:context=".PlatosActivity">
+
+    <!-- TÍTULO -->
+
+    <TextView
+        android:id="@+id/tvTituloPlatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nuestros Platos"
+        android:textColor="@color/sabor_rojo"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- SUBTÍTULO -->
+
+    <TextView
+        android:id="@+id/tvSubtituloPlatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Selecciona un plato"
+        android:textColor="@color/texto_secundario"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloPlatos" />
+
+    <!-- HAMBURGUESA -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHamburguesa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="🍔  Hamburguesa     S/ 15.00"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtituloPlatos" />
+
+    <!-- PIZZA -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPizza"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="🍕  Pizza     S/ 20.00"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnHamburguesa" />
+
+    <!-- PASTA -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPasta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="🍝  Pasta     S/ 18.00"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPizza" />
+
+    <!-- POLLO -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPollo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="🍗  Pollo     S/ 22.00"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPasta" />
+
+    <!-- FILTRO -->
+
+    <TextView
+        android:id="@+id/tvFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Filtrar por categoría:"
+        android:textColor="@color/sabor_rojo"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPollo" />
+
+    <Spinner
+        android:id="@+id/spinnerCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvFiltro"
+        app:layout_constraintTop_toTopOf="@id/tvFiltro" />
+
+    <!-- TÍTULO LISTA -->
+
+    <TextView
+        android:id="@+id/tvPlatosRegistrados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Platos registrados"
+        android:textColor="@color/sabor_rojo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerCategoria" />
+
+    <!-- LISTA -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPlatos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:clipToPadding="false"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@id/btnAgregarPlato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPlatosRegistrados"
+        tools:listitem="@layout/item_plato" />
+
+    <!-- AGREGAR -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAgregarPlato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="＋  Agregar plato"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_naranja"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnEditarPlato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- EDITAR -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditarPlato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="✏  Editar plato"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_rojo"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnEliminarPlato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ELIMINAR -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEliminarPlato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="🗑  Eliminar plato"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_rojo_oscuro"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnRegresarPlatos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- REGRESAR -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegresarPlatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="←  Regresar"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="@color/sabor_rojo"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
