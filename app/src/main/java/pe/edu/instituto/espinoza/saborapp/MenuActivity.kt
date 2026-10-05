@@ -1,8 +1,7 @@
-﻿package pe.edu.instituto.espinoza.saborapp
+package pe.edu.instituto.espinoza.saborapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,77 +11,240 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MenuActivity : AppCompatActivity() {
 
+    // =====================================================
+    // USUARIO LOGUEADO
+    // =====================================================
+
     private var idUsuario: Int = 1
     private var nombreUsuario: String = ""
     private var rolUsuario: String = "MOZO"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
+
         setContentView(R.layout.activity_menu)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+
+        // =================================================
+        // AJUSTAR BARRAS DEL SISTEMA
+        // =================================================
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+            findViewById(R.id.main)
+        ) { v, insets ->
+
+            val systemBars =
+                insets.getInsets(
+                    WindowInsetsCompat.Type.systemBars()
+                )
+
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
+
             insets
         }
 
-        idUsuario = intent.getIntExtra("ID_USUARIO", 1)
-        nombreUsuario = intent.getStringExtra("NOMBRE_USUARIO").orEmpty()
-        rolUsuario = intent.getStringExtra("ROL") ?: "MOZO"
 
-        val btnPlatos = findViewById<MaterialButton>(R.id.btnPlatos)
-        val btnMesas = findViewById<MaterialButton>(R.id.btnMesas)
-        val btnPedidos = findViewById<MaterialButton>(R.id.btnPedidos)
-        val btnReportes = findViewById<MaterialButton>(R.id.btnReportes)
-        val btnSalir = findViewById<MaterialButton>(R.id.btnSalir)
+        // =================================================
+        // RECIBIR DATOS DEL LOGIN
+        // =================================================
 
-        // CA4: Si es MOZO, la opciÃ³n Reportes no aparece
-        if (rolUsuario == "MOZO") {
-            btnReportes.visibility = View.GONE
-        } else {
-            btnReportes.visibility = View.VISIBLE
-        }
+        idUsuario =
+            intent.getIntExtra(
+                "ID_USUARIO",
+                1
+            )
+
+        nombreUsuario =
+            intent.getStringExtra(
+                "NOMBRE_USUARIO"
+            ).orEmpty()
+
+        rolUsuario =
+            intent.getStringExtra(
+                "ROL"
+            ) ?: "MOZO"
+
+
+        // =================================================
+        // PLATOS
+        // =================================================
+
+        val btnPlatos =
+            findViewById<MaterialButton>(
+                R.id.btnPlatos
+            )
 
         btnPlatos.setOnClickListener {
-            startActivity(Intent(this, PlatosActivity::class.java))
+
+            startActivity(
+                Intent(
+                    this,
+                    PlatosActivity::class.java
+                )
+            )
         }
+
+
+        // =================================================
+        // MESAS
+        // =================================================
+
+        val btnMesas =
+            findViewById<MaterialButton>(
+                R.id.btnMesas
+            )
 
         btnMesas.setOnClickListener {
-            startActivity(Intent(this, MesasActivity::class.java))
+
+            startActivity(
+                Intent(
+                    this,
+                    MesasActivity::class.java
+                )
+            )
         }
+
+
+        // =================================================
+        // PEDIDOS
+        // =================================================
+
+        val btnPedidos =
+            findViewById<MaterialButton>(
+                R.id.btnPedidos
+            )
 
         btnPedidos.setOnClickListener {
-            val intent = Intent(this, PedidosActivity::class.java).apply {
-                putExtra("ID_USUARIO", idUsuario)
-                putExtra("NOMBRE_USUARIO", nombreUsuario)
-                putExtra("ROL", rolUsuario)
-            }
+
+            val intent =
+                Intent(
+                    this,
+                    PedidosActivity::class.java
+                )
+
+            intent.putExtra(
+                "ID_USUARIO",
+                idUsuario
+            )
+
+            intent.putExtra(
+                "NOMBRE_USUARIO",
+                nombreUsuario
+            )
+
+            intent.putExtra(
+                "ROL",
+                rolUsuario
+            )
+
             startActivity(intent)
         }
+
+
+        // =================================================
+        // REPORTES
+        // =================================================
+
+        val btnReportes =
+            findViewById<MaterialButton>(
+                R.id.btnReportes
+            )
 
         btnReportes.setOnClickListener {
-            val intent = Intent(this, ReportesActivity::class.java).apply {
-                putExtra("ID_USUARIO", idUsuario)
-                putExtra("NOMBRE_USUARIO", nombreUsuario)
-                putExtra("ROL", rolUsuario)
-            }
+
+            val intent =
+                Intent(
+                    this,
+                    ReportesActivity::class.java
+                )
+
+            intent.putExtra(
+                "ID_USUARIO",
+                idUsuario
+            )
+
+            intent.putExtra(
+                "NOMBRE_USUARIO",
+                nombreUsuario
+            )
+
+            intent.putExtra(
+                "ROL",
+                rolUsuario
+            )
+
             startActivity(intent)
         }
 
+
+        // =================================================
+        // SALIR
+        // =================================================
+
+        val btnSalir =
+            findViewById<MaterialButton>(
+                R.id.btnSalir
+            )
+
         btnSalir.setOnClickListener {
-            MaterialAlertDialogBuilder(this)
-                .setTitle("Cerrar sesiÃ³n")
-                .setMessage("Â¿Deseas cerrar sesiÃ³n?")
-                .setNegativeButton("Cancelar", null)
-                .setPositiveButton("Salir") { _, _ ->
-                    val intent = Intent(this, LoginActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    }
-                    startActivity(intent)
-                    finish()
-                }
-                .show()
+
+            mostrarDialogoSalir()
         }
+    }
+
+
+    // =====================================================
+    // CONFIRMAR SALIDA
+    // =====================================================
+
+    private fun mostrarDialogoSalir() {
+
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Cerrar sesión")
+            .setMessage(
+                "¿Deseas cerrar la sesión de $nombreUsuario?"
+            )
+            .setNegativeButton(
+                "Cancelar",
+                null
+            )
+            .setPositiveButton(
+                "Salir"
+            ) { _, _ ->
+
+                cerrarSesion()
+            }
+            .show()
+    }
+
+
+    // =====================================================
+    // CERRAR SESIÓN
+    // =====================================================
+
+    private fun cerrarSesion() {
+
+        val intent =
+            Intent(
+                this,
+                LoginActivity::class.java
+            )
+
+        // Evita volver al menú con el botón atrás
+        intent.flags =
+            Intent.FLAG_ACTIVITY_NEW_TASK or
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+        startActivity(intent)
+
+        finish()
     }
 }
