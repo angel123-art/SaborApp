@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFF8F3">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Cuenta"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#E53935"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona una cuenta abierta:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
+
+
+    <Spinner
+        android:id="@+id/spinnerPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="20dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalle de la cuenta"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#E53935"
+        android:layout_marginBottom="10dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvDetalleCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No hay cuentas abiertas"
+            android:textSize="15sp"
+            android:textColor="#333333"/>
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/tvTotalCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOTAL: S/ 0.00"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#E53935"
+        android:gravity="end"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <!-- COMPARTIR CUENTA -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCompartirCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="📲 Compartir cuenta"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#25D366"
+        app:cornerRadius="10dp"
+        android:layout_marginBottom="8dp"/>
+
+
+    <!-- CERRAR CUENTA -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCerrarCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="✓ Cerrar cuenta"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF9800"
+        app:cornerRadius="10dp"
+        android:layout_marginBottom="8dp"/>
+
+
+    <!-- REGRESAR -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegresarCerrar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="← Regresar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D32F2F"
+        app:cornerRadius="10dp"/>
+
+</LinearLayout>

@@ -46,6 +46,12 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- CERRAR CUENTA -->
+        <activity
+            android:name=".CerrarCuentaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- REPORTES -->
         <activity
             android:name=".ReportesActivity"
